@@ -5,22 +5,19 @@ import User from "../Model/User.js";
 
 const router = Router();
 
-router.post("getTodoDataByUser", Authenticate, async (req, res) => {
-  const authHeader = req.headers["authorization"];
-  const token = authHeader && authHeader.split(" ")[1];
-  const id = token._id;
+router.post("/getTodoDataByUser", Authenticate, async (req, res) => {
   try {
-    const userFound = await Todo.find({ user: id });
+    const userFound = await Todo.find({ user: user._id });
     res.send(userFound);
   } catch (err) {
     res.status(400).send({ error: "Failed to get todo data" });
   }
 });
-router.post("getAllTodoData", Authenticate, async (req, res) => {
+router.post("/getAllTodoData", Authenticate, async (req, res) => {
   const userFound = await Todo.find();
   res.status(201).send(userFound);
 });
-router.post("CreateTodo", Authenticate, async (req, res) => {
+router.post("/CreateTodo", Authenticate, async (req, res) => {
   const { text } = req.body;
   try {
     const todo = await Todo.create({ data: text, user: req.user._id });
@@ -29,7 +26,7 @@ router.post("CreateTodo", Authenticate, async (req, res) => {
     res.status(400).send({ error: "Failed to create todo" });
   }
 });
-router.put("UpdateTodo", Authenticate, async (req, res) => {
+router.put("/UpdateTodo", Authenticate, async (req, res) => {
   const { text, todoid, user } = req.body;
   try {
     const todo = await Todo.findOneAndUpdate(
@@ -41,7 +38,7 @@ router.put("UpdateTodo", Authenticate, async (req, res) => {
     res.status(400).send({ error: "Failed to create todo" });
   }
 });
-router.delete("UpdateTodo", Authenticate, async (req, res) => {
+router.delete("/UpdateTodo", Authenticate, async (req, res) => {
   const { todoid } = req.body;
   try {
     const todo = await Todo.findOneAndDelete({
@@ -56,7 +53,7 @@ router.delete("UpdateTodo", Authenticate, async (req, res) => {
     res.status(400).send({ error: "Failed to delete todo" });
   }
 });
-router.post("getTodoId", Authenticate, async (req, res) => {
+router.post("/getTodoId", Authenticate, async (req, res) => {
   const { todoid } = req.body;
   try {
     const todo = await Todo.findOne({
@@ -71,7 +68,7 @@ router.post("getTodoId", Authenticate, async (req, res) => {
     res.status(400).send({ error: "Failed to get todo" });
   }
 });
-router.post("Addfavourite", Authenticate, async (req, res) => {
+router.post("/Addfavourite", Authenticate, async (req, res) => {
   const { email, todoId } = req.body;
   try {
     const todo = await Todo.findById(todoId);

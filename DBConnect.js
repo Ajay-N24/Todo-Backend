@@ -1,7 +1,6 @@
 import mongoose from "mongoose";
 const mongodbConnect = async () => {
-  const mongourl =
-    "mongodb+srv://Ajayprmk:ajayprmk@cluster0.pap6tc8.mongodb.net/Todo-Backend";
+  const mongourl = MongoDB_URI_HERE;
   await mongoose
     .connect(mongourl)
     .then(async () => {

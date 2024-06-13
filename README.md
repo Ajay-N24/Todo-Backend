@@ -8,15 +8,15 @@ User Authentication:
 
 ## Todo Management:
 
-Create, update, delete, and view todos.
-View a list of todos with pagination.
-View a specific todo.
-Search todos based on a search string.
-Tag todos as pinned or favorite.
-Tech Stack
-Node.js: Server-side JavaScript runtime.
-Express.js: Web framework for Node.js.
-MongoDB: NoSQL database.
-Mongoose: ODM for MongoDB.
-JWT: JSON Web Token for authentication.
-bcrypt: Library for hashing passwords
+- Create, update, delete, and view todos.
+- View a list of todos with pagination.
+- View a specific todo.
+- Search todos based on a search string.
+- Tag todos as pinned or favorite.<br/><br/>
+## Tech Stack
+- Node.js: Server-side JavaScript runtime.
+- Express.js: Web framework for Node.js.
+- MongoDB: NoSQL database.
+- Mongoose: ODM for MongoDB.
+- JWT: JSON Web Token for authentication.
+- bcrypt: Library for hashing passwords

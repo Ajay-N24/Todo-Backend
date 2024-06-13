@@ -20,3 +20,30 @@ User Authentication:
 - Mongoose: ODM for MongoDB.
 - JWT: JSON Web Token for authentication.
 - bcrypt: Library for hashing passwords
+
+## Getting Started
+
+### Prerequisites
+- Node.js and npm installed.
+- MongoDB installed and running.
+
+### Installation
+1. Clone the repository:
+```
+git clone https://github.com/yourusername/todo-backend.git
+cd todo-backend
+```
+2. Install dependencies:
+```
+npm install
+```
+3. Create a .env file:
+```
+MONGODB_URI=mongodb://localhost:27017/todo-app
+JWT_SECRET=your_jwt_secret
+```
+4. Start the server:
+```
+npm start
+```
+The server will be running on http://localhost:5000.
